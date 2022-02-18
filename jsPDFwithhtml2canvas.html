@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>jsPDF </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+
+		<script>
+			function generatePDF() {
+				var pdf = new jsPDF('p', 'pt', 'a4');
+				pdf.addHTML(document.body, function() {
+				pdf.save('web.pdf');
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="generatePDF()">Generate PDF using jsPDF</button>
+		<div id="datatoprint",style="display: none">
+		<dl>
+			<dt>Definition list</dt>
+			<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+		 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+		 commodo consequat.</dd>
+			<dt>Lorem ipsum dolor sit amet</dt>
+			<dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+		 aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+		 commodo consequat.</dd>
+		 </dl>
+		</div>
+	</body>
+</html>
